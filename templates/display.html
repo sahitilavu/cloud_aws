@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Information</title>
+</head>
+<body>
+    <h2>User Information</h2>
+    {% if user %}
+        <p><strong>Username:</strong> {{ user[0] }}</p>
+        <p><strong>First Name:</strong> {{ user[1] }}</p>
+        <p><strong>Last Name:</strong> {{ user[2] }}</p>
+        <p><strong>Email:</strong> {{ user[3] }}</p>
+        <p><strong>Address:</strong> {{ user[4] }}</p>
+    {% else %}
+        <p>No user data available.</p>
+    {% endif %}
+
+    {% if word_count %}
+        <p><strong>Word Count of Uploaded File:</strong> {{ word_count }}</p>
+    {% endif %}
+
+    {% if uploaded_file_name %}
+        <p>You can <a href="/download/{{ uploaded_file_name }}">download the file here</a>.</p>
+    {% endif %}
+
+    <p><a href="/">Return Home</a></p>
+</body>
+</html>
